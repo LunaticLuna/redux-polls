@@ -12,8 +12,8 @@ class Leaderboard extends React.Component{
               <img src={user.avatarURL} alt = {`Avatar for ${user.name}`}/>
               <div>
                 <h1>{user.name}</h1>
-                <p>{user.polls}Polls</p>
-                <p>{user.answers}Answers</p>
+                <p>{user.polls} Polls</p>
+                <p>{user.answers} Answers</p>
               </div>
             </li>
 
@@ -36,9 +36,7 @@ function mapStateToProps({ users }){
           answers:answers.length
         }
       })
-      .sort((a,b,)=>{ b.polls + b.answers > a.polls+a.answers
-
-      })
+      .sort((a,b,)=>b.polls + b.answers > a.polls+a.answers)
   }
 }
 

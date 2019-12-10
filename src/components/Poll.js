@@ -21,7 +21,6 @@ class Poll extends React.Component{
       return <p>This poll does not exist </p>
     }
     const { poll, vote, authorAvatar } = this.props
-    console.log('!!!!!!!poll', poll)
     const totalVotes = getVoteKeys()
       .reduce((total,key) => total + poll[key].length,0)
 
