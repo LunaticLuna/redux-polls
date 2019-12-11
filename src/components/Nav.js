@@ -1,4 +1,5 @@
 import React from 'react'
+import AuthedUser from './AuthedUser'
 
 import { NavLink } from 'react-router-dom'
 
@@ -22,6 +23,8 @@ export default function Nav () {
           </NavLink>
         </li>
       </ul>
+      <AuthedUser />
+
     </nav>
   )
 }

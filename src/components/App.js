@@ -8,6 +8,8 @@ import AddPoll from './AddPoll'
 import Poll from './Poll'
 import LoadingBar from 'react-redux-loading'
 import Nav from './Nav'
+import LogIn from './LogIn'
+
 
 class App extends Component {
   componentDidMount(){
@@ -21,15 +23,18 @@ class App extends Component {
         <Fragment>
           <LoadingBar />
           <div className = 'container'>
-            <Nav />
+            
             {this.props.loading === true
-              ? null
-              : <div>
+              ? <LogIn />
+              : <React.Fragment>
+                <Nav />
+                <div>
                   <Route path = '/' exact component = {Dashboard} />
                   <Route path = '/leaderboard'  component = {Leaderboard} />
                   <Route path = '/polls/:id'  component = {Poll} />
                   <Route path = '/add' component = {AddPoll} />
                 </div>
+                </React.Fragment>
             }
           </div>
         </Fragment> 
