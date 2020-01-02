@@ -15,7 +15,8 @@ class LogIn extends React.Component{
   }
   selectUser = (id) => {
     this.setState({
-      selected: id
+      selected: id,
+      listOpen:false,
     })
   }
   handleSubmit = (e) => {
@@ -31,21 +32,24 @@ class LogIn extends React.Component{
     console.log(this.state)
     return (
         <div className = 'dd-container'>
-          Poll
-          {console.log(listOpen)}
-          <div className = 'dd-header'>
+          <h1 className = 'center'>Log In</h1>
+          <div className = 'dd-content'>
+            <h2>Select a Character...</h2>
             <div className = 'dd-box'
                   onClick = {this.toggleListOpen}>
               <div className = 'dd-header-title'>
                 {selected === ''
-                  ? <span>Select Character</span>
-                  : <span>{users[selected].name}</span>
+                  ? <span style = {{display:'inline-block',opacity:0.5,margin:'5px'}}> Select Character</span>
+                  : <div className = 'dd-users'>
+                      <img src={users[selected].avatarURL} alt = 'user Avatar'/>
+                      <span className='dd-user-name'>{users[selected].name}</span>
+                    </div>
                 }
               </div>
               
               {listOpen
-                  ? <FaAngleUp />
-                  : <FaAngleDown />
+                  ? <FaAngleUp className = 'angle' size = {30}/>
+                  : <FaAngleDown className = 'angle' size = {30}/>
               }
             </div>
             <button className = 'dd-submit-btn'
@@ -55,13 +59,14 @@ class LogIn extends React.Component{
                     Log In</button>
           </div>
           {listOpen &&
-            <ul>
+            <ul className = 'dd-user-list'>
               {Object.keys(users).map((id) => (
                 <li key = {id}
                     className = 'dd-users'
                     onClick = {() => this.selectUser(id)}
                     >
-                    {users[id].name}
+                    <img src={users[id].avatarURL} alt = 'user Avatar'/>
+                    <span className='dd-user-name'>{users[id].name}</span>
                 </li>
               ))}
             </ul>

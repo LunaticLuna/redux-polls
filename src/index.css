@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   color: #252525;
+  height:100%;
 }
 
 a {
@@ -14,6 +15,7 @@ a {
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
+  height:100%;
 }
 
 .loading {
@@ -255,9 +257,88 @@ input {
   font-size: 16px;
   position: relative;
 }
-.dropdown-container{
-  background-color: gray;
-  font-weight: 300;
-  margin: 2px 20px;
-  margin-right: 30px;
+.dd-container{
+
+  height: 90vh;
+
+  position:relative;
+}
+.dd-content{
+  /*background-color: blue;*/
+  position:absolute;
+  font-size:0px;
+  padding:0px;
+  width:430px;
+  height:34px;
+  bottom:80%;
+  left:20%;
+  right:20%;
+  border: 1px solid rgba(0,0,0,.29);
+
+}
+.dd-box{
+  /*background-color: red;*/
+  display:inline-block;
+  vertical-align: top;
+  height:30px;
+  /*border: 1px solid rgba(0,0,0,.29);*/
+  margin:0;
+  /*width:200px;*/
+
+}
+.angle{
+
+}
+.dd-header-title{
+  display:inline-block;
+  vertical-align: top;
+  width:300px;
+  /*background-color: green;*/
+  margin:0px;
+  /*padding:7px;*/
+  position:relative;
+  /*border: 1px solid rgba(0,0,0,.29);*/
+  font-size:20px;
+}
+
+.dd-submit-btn{
+  text-transform: uppercase;
+  padding: 7px;
+  /*border: 1px solid rgba(0,0,0,.29);*/
+  cursor: pointer;
+  background-color: #D3D3D3;
+  font-size: 16px;
+  width: 100px;
+  
+}
+.dd-user-list{
+  /*background-color: green;*/
+  position:absolute;
+  top:20%;
+  left:20%;
+
+  width: 330px;
+  margin:0;
+  /*padding:20px;*/
+  padding-top: 0;
+  border: 1px solid rgba(0,0,0,.29);
+}
+.dd-users{
+  /*background-color: gray;*/
+  margin:0px;
+  top:0;
+}
+.dd-users img {
+  width: 33px;
+  height: 32px;
+  padding: 1px;
+  border-radius: 20px;
+  margin:0 10px;
+  vertical-align: middle;
+}
+.dd-user-name{
+  display:inline-block;
+  /*background-color: yellow;*/
+  vertical-align: middle;
+  /*height:30px;*/
 }
